@@ -4,7 +4,8 @@ import json
 import os
 import discord
 from discord.ext import commands
-bot = commands.Bot(command_prefix='!')
+intents = discord.Intents(messages=True, guilds=True)
+bot = commands.Bot(command_prefix='!',intents=intents)
 
 
 #created variables to hide token id and guild id's
@@ -26,10 +27,11 @@ async def on_ready():
 
 
 
-print("test")
+
 @bot.command()
-async def ping(ctx, arg):
-    await ctx.send(arg)
+async def ping(ctx):
+    channel = client.get_channel(755673508729847848)
+    await ctx.channel.send("pong")
 
 @bot.event
 async def on_message(ctx, message):
@@ -39,7 +41,7 @@ async def on_message(ctx, message):
     await bot.process_commands(message)
 
 
-print(TOKEN,GUILD)
+
 
 client.run(TOKEN)
 

@@ -13,6 +13,6 @@ class Gambling(commands.Cog):
     def coinflip(self):
         return random.randint(0,1)
 
-    @commands.command()
-    async def gamble(self, ctx , money = int):
+    #@commands.command()
+    #async def gamble(self, ctx , money = int):
         
