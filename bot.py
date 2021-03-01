@@ -1,6 +1,7 @@
 # bot.py
 #import cogs
 import json
+import asyncio
 import os
 import discord
 from discord.ext import commands
@@ -27,7 +28,7 @@ async def on_ready():
 
 
 
-@bot.command()
+@bot.command(pass_context = True)
 async def ping(ctx):
     print("pong")
     await ctx.send("pong")
