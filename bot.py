@@ -34,7 +34,7 @@ async def ping(ctx, arg):
 @bot.event
 async def on_message(ctx, message):
     if message.content == "hello":
-        await ctx.send("fuck you")
+        await ctx.send("wurd up to turd up")
 
     await bot.process_commands(message)
 
