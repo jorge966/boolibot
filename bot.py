@@ -19,17 +19,17 @@ client = discord.Client()
 async def on_ready():
 
     for guild in client.guilds:
-        current_guild = guild
-        print(current_guild)
+        print(guild)
 
 
-    print(f'{client.user} has connected to ', current_guild)
+    print(f'{client.user} has connected to the server')
 
 
 
 
 @bot.command()
 async def ping(ctx):
+    print("pong")
     await ctx.send("pong")
 
 @bot.event
