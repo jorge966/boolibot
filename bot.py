@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='!',intents=intents)
 
 #created variables to hide token id and guild id's
 TOKEN = os.environ['TOKEN']
-GUILD = os.environ['GUILD']
+#GUILD = os.environ['GUILD']
 
 
 client = discord.Client()
@@ -26,19 +26,12 @@ async def on_ready():
     print(f'{client.user} has connected to the server')
 
 
-
-
-@bot.command(pass_context = True)
+@bot.command(pass_context=True)
 async def ping(ctx):
     print("pong")
     await ctx.send("pong")
 
-@bot.event
-async def on_message(ctx, message):
-    if message.content == "hello":
-        await ctx.send("wurd up to turd up")
 
-    await bot.process_commands(message)
 
 
 
