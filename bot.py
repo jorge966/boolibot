@@ -16,14 +16,14 @@ TOKEN = os.environ['TOKEN']
 
 client = discord.Client()
 #checks if the bot joined the correct server
-@client.event
+@bot.event
 async def on_ready():
 
     for guild in client.guilds:
         print(guild)
 
 
-    print(f'{client.user} has connected to the server')
+    print(f'{bot.user} has connected to the server')
 
 
 @bot.command(pass_context=True)
@@ -31,12 +31,18 @@ async def ping(ctx):
     print("pong")
     await ctx.send("pong")
 
+@bot.event
+async def on_message(ctx, message):
+    if message.content.startswith('!greet'):
+        await ctx.send("wurd up")
 
 
 
 
 
-client.run(TOKEN)
+
+
+bot.run(TOKEN)
 
 
 
