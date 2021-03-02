@@ -32,9 +32,11 @@ async def ping(ctx):
     await ctx.send("pong")
 
 @bot.event
-async def on_message(ctx, message):
-    if message.content.startswith('!greet'):
-        await ctx.send("wurd up")
+async def on_message(message):  # ctx not needed in certain event like these
+    if message.content == "hello" or 'Hello':
+        # I had startswith at the end but didnt seem to work, will have to find a way to make it work
+        await message.channel.send("Wurd up to turd up")
+        # normally i would do ctx.send but message.channel.send seems to work here
 
 
 
